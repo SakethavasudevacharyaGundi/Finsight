@@ -51,5 +51,17 @@ class SnowflakeLoader:
 
         self.connection.close()
         logger.info("Snowflake connection closed")
+    def execute_many(self, query: str, data: list):
+
+        cursor = self.connection.cursor()
+
+        try:
+            cursor.executemany(query, data)
+            logger.info(
+                f"Batch inserted {len(data)} rows"
+            )
+
+        finally:
+            cursor.close()
     
     
