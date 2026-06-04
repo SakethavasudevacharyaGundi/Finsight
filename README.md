@@ -17,7 +17,8 @@ The platform tracks UPI adoption, digital payment growth, payment rail evolution
 
 ### Dashboard
 
-![Dashboard](images/dashboard.png)
+![Dashboard1](images/dashboard1.png)
+![Dashboard2](images/dashboard2.png)
 
 ### Airflow DAG
 
