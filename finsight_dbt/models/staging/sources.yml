@@ -1,0 +1,21 @@
+version: 2
+
+sources:
+  - name: raw
+    database: FINSIGHT_DB
+    schema: RAW
+
+    tables:
+      - name: UPI_DAILY_STATS
+
+      - name: UPI_MONTHLY_STATS
+
+      - name: RBI_DPI
+
+      - name: RBI_PAYMENT_TRANSACTIONS
+
+      - name: RBI_PAYMENT_CHANNELS
+
+      - name: RBI_PAYMENT_INFRASTRUCTURE
+
+      - name: RBI_PAYMENT_FRAUDS

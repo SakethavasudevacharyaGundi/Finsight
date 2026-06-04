@@ -3,20 +3,24 @@ version: '3.8'
 x-airflow-common:
   &airflow-common
   image: apache/airflow:2.9.1
+  env_file:
+    - .env
   environment:
     AIRFLOW__CORE__EXECUTOR: CeleryExecutor
     AIRFLOW__DATABASE__SQL_ALCHEMY_CONN: postgresql+psycopg2://airflow:airflow@postgres/airflow
     AIRFLOW__CELERY__RESULT_BACKEND: db+postgresql://airflow:airflow@postgres/airflow
-    AIRFLOW__CELERY__BROKER_URL: redis://:@redis:6379/0dbt
+    AIRFLOW__CELERY__BROKER_URL: redis://:@redis:6379/0
     AIRFLOW__CORE__LOAD_EXAMPLES: "false"
     AIRFLOW__API__AUTH_BACKENDS: airflow.api.auth.backend.basic_auth
     _AIRFLOW_WWW_USER_USERNAME: airflow
     _AIRFLOW_WWW_USER_PASSWORD: airflow
     _PIP_ADDITIONAL_REQUIREMENTS: >
       pandas
+      openpyxl
       requests
       snowflake-connector-python
   volumes:
+    - ./:/opt/project
     - ./airflow/dags:/opt/airflow/dags
     - ./airflow/logs:/opt/airflow/logs
     - ./airflow/plugins:/opt/airflow/plugins

@@ -9,6 +9,9 @@ from src.utils.logger import get_logger
 logger = get_logger(__name__)
 from datetime import datetime
 import pandas as pd
+from src.loaders.rbi_payment_indicator_downloader import (
+    download_new_files
+)
 
 
 def parse_period(year_value, month_value):
@@ -577,7 +580,8 @@ def process_all_files():
         "frauds": frauds_df
     }
 if __name__ == "__main__":
-
+    
+    new_files = download_new_files()
     results = process_all_files()
 
     from src.loaders.snowflake_loader import (

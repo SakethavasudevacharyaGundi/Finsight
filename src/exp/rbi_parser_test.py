@@ -1,22 +1,10 @@
-import pandas as pd
-
-FILE_PATH = (
-    "data/raw/rbi_payment_indicators/"
-    "PSSOCT2022D3D2B2B62E8D40CDB7EAD95931FA1756.xlsx"
+from src.loaders.npci_upi_monthly_loader import (
+    download_monthly_upi
 )
 
-df = pd.read_excel(
-    FILE_PATH,
-    header=None
+df = download_monthly_upi(
+    month="May",
+    year=2026
 )
 
-part1 = df.iloc[1:51]
-
-for idx, row in part1.iterrows():
-
-    metric = str(row[0]).strip()
-
-    if metric.startswith("2.6"):
-        print(idx)
-        print(row)
-        print()
+print(df.head())

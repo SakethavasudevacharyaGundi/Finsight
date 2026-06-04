@@ -1,0 +1,71 @@
+version: 2
+
+models:
+
+  - name: fact_upi_monthly
+
+    columns:
+
+      - name: month
+        tests:
+          - unique
+          - not_null
+
+  - name: dim_date
+
+    columns:
+
+      - name: date_key
+        tests:
+          - unique
+          - not_null
+  
+  - name: mart_payment_mix
+
+    columns:
+
+      - name: report_period
+        tests:
+          - not_null
+
+      - name: payment_channel
+        tests:
+          - not_null
+  - name: mart_fraud_trends
+
+    columns:
+
+      - name: report_period
+        tests:
+          - unique
+          - not_null
+
+  - name: mart_digital_payment
+
+    columns:
+
+      - name: period
+        tests:
+          - unique
+          - not_null
+
+      - name: dpi_value
+        tests:
+          - not_null
+  - name: mart_upi_anomalies
+
+    columns:
+
+      - name: month
+        tests:
+          - unique
+          - not_null
+
+  - name: mart_upi_growth
+
+    columns:
+
+      - name: month
+        tests:
+          - unique
+          - not_null

@@ -5,6 +5,9 @@ import pandas as pd
 
 from src.loaders.snowflake_loader import SnowflakeLoader
 from src.utils.logger import get_logger
+from src.loaders.npci_upi_monthly_loader import (
+    download_monthly_upi
+)
 
 logger = get_logger(__name__)
 
@@ -233,5 +236,9 @@ def load_upi():
 
 
 if __name__ == "__main__":
-
+    
+    download_monthly_upi(
+        month=...,
+        year=...
+    )
     load_upi()

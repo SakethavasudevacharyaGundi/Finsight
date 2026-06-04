@@ -35,3 +35,30 @@ Thumbs.db
 # Snowflake / Temp Files
 *.tmp
 *.bak
+
+# Python
+__pycache__/
+*.pyc
+
+# Virtual Environments
+.venv/
+venv/
+airflow_env/
+
+# Airflow
+airflow/plugins/__pycache__/
+
+# dbt
+target/
+dbt_packages/
+logs/
+
+# Snowflake
+*.snowsql
+
+# Local Files
+debug_response.bin
+
+# OS
+.DS_Store
+Thumbs.db

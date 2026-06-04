@@ -1,0 +1,30 @@
+version: 2
+
+models:
+
+  - name: stg_upi_monthly
+
+    columns:
+
+      - name: month
+        tests:
+          - unique
+          - not_null
+
+  - name: stg_upi_daily
+
+    columns:
+
+      - name: report_date
+        tests:
+          - unique
+          - not_null
+
+  - name: stg_rbi_payment_transactions
+
+    columns:
+
+      - name: transaction_key
+        tests:
+          - unique
+          - not_null
