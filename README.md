@@ -15,13 +15,13 @@ The platform tracks UPI adoption, digital payment growth, payment rail evolution
 
 ---
 
-## Dashboard Preview
+### Dashboard
 
-Add screenshots after publishing:
+![Dashboard](images/dashboard.png)
 
+### Airflow DAG
 
-images/dashboard.png
-images/airflow_dag.png
+![Airflow DAG](images/airflow_dag.png)
 
 ---
 
